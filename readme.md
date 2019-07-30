@@ -121,7 +121,7 @@ Make your first html file named `dial.html` and copy/paste the following:
 <div id="video-out"> Making a Call </div>
 
 <!-- Libs and Scripts -->
-<script src="https://stephenlb.github.io/webrtc-sdk/js/webrtc-v2.js"></script>
+<script src="https://cdn.pubnub.com/webrtc/webrtc-v2.js"></script>
 <script>(()=>{
     // ~Warning~ You must get your own API Keys for non-demo purposes.
     // ~Warning~ Get your PubNub API Keys: https://www.pubnub.com/get-started/
@@ -343,7 +343,7 @@ By default the WebRTC SDK starts user's camera.  You can optionally prevent this
 <div id="video-out"></div>
 
 <!-- Libs and Scripts -->
-<script src="https://stephenlb.github.io/webrtc-sdk/js/webrtc-v2.js"></script>
+<script src="https://cdn.pubnub.com/webrtc/webrtc-v2.js"></script>
 <script>(=>(){
 
     // ~Warning~ You must get your own API Keys for non-demo purposes.
@@ -899,7 +899,7 @@ The goal is to exchange ICE candidate packets between two peers.
 `ICE candidate packets` are structured payloads which contain possible
 path recommendations between two peers.
 You can use a lib which will take care of the nitty gritty such as
-[WebRTC Simple Calling API + Mobile](https://github.com/stephenlb/webrtc-sdk)
+[WebRTC Simple Calling API + Mobile](https://github.com/pubnub/webrtc)
 however below is the general direction that is taken inside the SDK itself.
 
 Note that the demonstration code below is intintionally incomplete.
