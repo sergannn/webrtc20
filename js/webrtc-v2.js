@@ -615,8 +615,11 @@ const PHONE = window.PHONE = config => {
     PHONE.camera.ready       = PHONE.camera;
 
     // Start Camera Automatically
-    if (autocam) startcamera();
-
+    if (autocam) {
+        console.log("starting camera");
+        setTimeout(
+        startcamera,5000);
+    }
     // Start Dailer Socket
     startsubscribe();
 
