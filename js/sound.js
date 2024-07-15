@@ -23,7 +23,7 @@ var sounds = (function(){
 
                 audio.setAttribute( 'style',    'display:none' );
                 audio.setAttribute( 'prelaod',  'auto' );
-                audio.setAttribute( 'autoplay', 'true' );
+                audio.setAttribute( 'autoplay', 'false' );
 
                 audio.innerHTML = "<source src="      + sound +
                                   ".ogg><source src=" + sound +
