@@ -135,6 +135,7 @@ const PHONE = window.PHONE = config => {
 
             // Disconnect and Hangup
             talk.hangup = signal => {
+                console.log("Bye!");
                 if (talk.closed) return;
 
                 talk.closed = true;
