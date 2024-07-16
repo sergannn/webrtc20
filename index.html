@@ -176,13 +176,14 @@ function connected(session) {
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 // Video Session Ended
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-function ended(session) {
+function ended(session,first) {
     clearInterval(thumbnail.ival);
     thumbnail.ival = 0;
     set_icon('facetime-video');
     img_out.innerHTML = '';
     sounds.play('sound/goodbye');
-    console.log("Bye!");
+   if(!first) { console.log("Bye!");}
+    else { console.log("ending not first.."); }
 }
 
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -269,7 +270,7 @@ phone.receive(function(session){
     session.message(message);
     session.thumbnail(thumbnail);
     session.connected(connected);
-    session.ended(ended);
+    session.ended(ended,true);
 
     if (!thumbnail.ival)
         thumbnail.ival = setInterval( () => thumbnail(session), 400 );
