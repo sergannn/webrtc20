@@ -271,7 +271,7 @@ phone.receive(function(session){
     session.message(message);
     session.thumbnail(thumbnail);
     session.connected(connected);
-    session.ended(function() {console.log("session ended"); ended(););
+    session.ended(function() {console.log("session ended"); ended();});
 
     if (!thumbnail.ival)
         thumbnail.ival = setInterval( () => thumbnail(session), 400 );
