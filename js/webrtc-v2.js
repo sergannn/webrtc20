@@ -366,8 +366,8 @@ const PHONE = window.PHONE = config => {
         let snap    = { width: 100, height: 100 };
 video.poster="https://cdn.vectorstock.com/i/1000x1000/22/22/abstract-logo-video-loading-vector-4692222.webp";
         // Video Settings
-        video.width     = "100%";//snap.width;
-        video.height    = "100%";//snap.height;
+        video.width     = snap.width;
+        video.height    = snap.height;
         video.srcObject = stream;
         video.volume    = 0.0;
 
