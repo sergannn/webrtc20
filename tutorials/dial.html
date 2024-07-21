@@ -61,7 +61,7 @@ const id = urlParams.get('id');
     });
 
     function call(id) {
-        if(id!='') { session = phone.dial(id); console.log('calling ' + id); } else {
+         if(id!=undefined)  { session = phone.dial(id); console.log('calling ' + id); } else {
         var callee = document.getElementById('number').value;
         console.log('calling ' + callee);
         session = phone.dial(callee);
