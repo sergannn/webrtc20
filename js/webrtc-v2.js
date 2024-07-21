@@ -363,7 +363,7 @@ const PHONE = window.PHONE = config => {
         let video   = myvideo || document.createElement('video');
         let canvas  = document.createElement('canvas');
         let context = canvas.getContext("2d");
-        let snap    = { width: 100%, height: 100% };
+        let snap    = { width: 100, height: 100 };
 video.poster="https://cdn.vectorstock.com/i/1000x1000/22/22/abstract-logo-video-loading-vector-4692222.webp";
         // Video Settings
         video.width     = "100%";//snap.width;
