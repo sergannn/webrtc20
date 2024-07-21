@@ -1,8 +1,9 @@
-<!-- Styles -->
+<!-- Styles 
 <style> video { width: 200px } </style>
-
+-->
+<button onclick="document.body.requestFullscreen();" id="revealButton">OK</button>
 <!-- Video Output Zone -->
-<div id="video-out"></div>
+<div style="display:none;" id="video-out"></div>
 
 <!-- Libs and Scripts -->
 <!-- <script src="https://cdn.pubnub.com/pubnub.min.js"></script> -->
@@ -43,21 +44,14 @@ const id = urlParams.get('id');
 
     // When Call Comes In
     phone.receive(function(session){
-function toggleFullScreen(element) {
-  if (!document.fullscreenElement) {
-    element.requestFullscreen().catch(err => {
-      alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-    });
-  } else {
-    document.exitFullscreen();
-  }
-}
+
         // Display Your Friend's Live Video
         session.connected( session => {
             console.log('Session: CONNECTED');
             phone.$('video-out').appendChild(session.video);
+            
             //toggleFullScreen(session.video);
-            document.body.requestFullscreen();
+            //document.body.requestFullscreen();
         });
 
         session.ended( session => console.log('Session: ENDED') );
