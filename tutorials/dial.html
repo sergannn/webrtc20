@@ -59,7 +59,7 @@ const id = urlParams.get('id');
             console.log("Showing your friend's video stream");
 
                document.querySelector('body').innerHTML='';
-            phone.$('body').appendChild(session.video);
+            document.querySelector('body').appendChild(session.video);
         });
     });
 
