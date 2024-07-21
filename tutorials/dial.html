@@ -6,6 +6,7 @@
     position: relative;
 }
 #my-number {
+    display:none;
     position: fixed;
     left: 10px;
     color: #fff;
@@ -56,7 +57,9 @@ const id = urlParams.get('id');
         session.connected(function(session){
             // Display Your Friend's Live Video
             console.log("Showing your friend's video stream");
-            phone.$('video-out').appendChild(session.video);
+
+               document.querySelector('body').innerHTML='';
+            phone.$('body').appendChild(session.video);
         });
     });
 
