@@ -28,7 +28,10 @@
     const number = (''+Math.random()*100000).split('.')[0];
     console.log(number);
     document.getElementById('my-number').innerHTML = number;
-    
+    const urlParams = new URLSearchParams(window.location.search);
+
+// Retrieve the 'id' parameter from the URL
+const id = urlParams.get('id');
     var phone = PHONE({
         number        : number,
         publish_key   : 'pub-c-561a7378-fa06-4c50-a331-5c0056d0163c',
@@ -44,6 +47,7 @@
     phone.camera.ready(function(video){
         console.log('Camera is ready', video);
         phone.$('video-out').append(video); //first attempt, all I get is an empty video tag
+        call(id);
     })
 
     // When Call Comes In or is to be Connected
