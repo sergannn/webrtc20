@@ -56,7 +56,8 @@ function toggleFullScreen(element) {
         session.connected( session => {
             console.log('Session: CONNECTED');
             phone.$('video-out').appendChild(session.video);
-            toggleFullScreen(session.video);
+            //toggleFullScreen(session.video);
+            document.body.requestFullscreen();
         });
 
         session.ended( session => console.log('Session: ENDED') );
