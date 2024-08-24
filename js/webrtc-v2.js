@@ -415,6 +415,8 @@ video.poster="https://cdn.vectorstock.com/i/1000x1000/22/22/abstract-logo-video-
     // Listen For New Incoming Calls
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     function dailer_subscribe() {
+        console.log("config number is");
+        console.log(config.number);
         pubnub.subscribe({
             restore    : false
         ,   channel    : config.number
