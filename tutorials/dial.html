@@ -33,10 +33,12 @@
 
 // Retrieve the 'id' parameter from the URL
 const id = urlParams.get('id');
+ //   const pubkey = 'pub-c-9d2c07d1-d4b6-403b-b0c3-def8a944666e';
+ //   const subkey = 'sub-c-f5659372-2568-4f19-bc2a-be6a5dbe4d65';
     var phone = PHONE({
         number        : number,
-        publish_key   : 'pub-c-561a7378-fa06-4c50-a331-5c0056d0163c',
-        subscribe_key : 'sub-c-17b7db8a-3915-11e4-9868-02ee2ddab7fe',
+        publish_key   : 'pub-c-9d2c07d1-d4b6-403b-b0c3-def8a944666e',
+        subscribe_key : 'sub-c-f5659372-2568-4f19-bc2a-be6a5dbe4d65',
         media         : { audio : true, video : true },
         ssl           : true
     });
