@@ -487,6 +487,7 @@ video.poster="https://cdn.vectorstock.com/i/1000x1000/22/22/abstract-logo-video-
     // Initiate Dialing Socket
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     function startsubscribe() {
+        console.log("starting subscribe");
         onready();
         dailer_subscribe();
     }
