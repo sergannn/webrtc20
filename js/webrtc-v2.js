@@ -415,7 +415,7 @@ video.poster="https://cdn.vectorstock.com/i/1000x1000/22/22/abstract-logo-video-
     // Listen For New Incoming Calls
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     function dailer_subscribe() {
-        console.log("config number is");
+        console.log("config.number is (its channel)");
         console.log(config.number);
         pubnub.subscribe({
             restore    : false
@@ -431,6 +431,8 @@ video.poster="https://cdn.vectorstock.com/i/1000x1000/22/22/abstract-logo-video-
     // When Ready to Receive Calls
     // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
     function onready(subscribed) {
+        console.log("onready");
+        console.log(subscribed);
         if (subscribed) myconnection = true;
         if (myconnection && autocam) readycb();
         if (!(mystream && myconnection)) return;
@@ -709,7 +711,7 @@ function socket(setup) {
         ,   stop       = false
         ,   url        = ''
         ,   origin     = 'ps'+(Math.random()+'').split('.')[1]+'.pubnub.com';
-
+console.log(setup);
         // Requester Object
         let request = requester({
             timeout : timeout,
