@@ -2,7 +2,7 @@
 $id=$_REQUEST['id'];
 
 // Replace this with your actual API endpoint
-$externalApiUrl = 'https://fu-laravel.onrender.com/api/update-value?table_name=online&field_to_update=status&where_condition=5&new_value=online';
+$externalApiUrl = 'https://fu-laravel.onrender.com/api/update-value?table_name=online&field_to_update=status&where_condition='.$id.'&new_value=online';
 
 // Check if the request is coming from your domain
 if ($_SERVER['HTTP_REFERER'] !== 'http://your-domain.com') {
