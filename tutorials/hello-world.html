@@ -152,7 +152,7 @@
         console.log("phone is ready");
      const pingPHP = async () => {
   try {
-        const response = await fetch('online.php?id=5');
+        const response = await fetch('https://fu-laravel.onrender.com/api/update-value?table_name=online&field_to_update=status&where_condition=5&new_value=online');
     const result = await response.text();
     console.log('Result from PHP:', result);
   } catch (error) {
