@@ -1,26 +1,59 @@
-
-<!-- dial.html -->
-
-<style>
-#video-out {
-    position: relative;
-}
-#my-number,#number,button {
-    display:none;
-    position: fixed;
-    left: 10px;
-    color: #fff;
-    z-index: 100;
-}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dial Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        #container {
+            display: flex;
+            flex-direction: column;
+            height: 90vh; /* Set to 90% of viewport height */
+            max-height: 600px; /* Maximum height to prevent excessive scrolling */
+        }
+        #video-out {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+        #my-number {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        #controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
 <body>
-<!-- Video Output Zone -->
-<input id="number" /><button onclick="call()">call</button>
- <div id="my-number">Ожидаем врача</div>
-<div id="video-out">
-   
-</div>
-</body>
+    <div id="container">
+        <div class="row">
+            <div class="col">
+                <div id="video-out"></div>
+            </div>
+        </div>
+             <div class="row">
+            <div class="col">
+                <div id="video-in">Ожидаем</div>
+            </div>
+        </div>
+                               
+       
+    </div>
+
 <script src="../js/webrtc-v2.js"></script>
 
 <script>
@@ -48,7 +81,8 @@ const id = urlParams.get('id');
 
     phone.camera.ready(function(video){
         console.log('Camera is ready', video);
-        phone.$('video-out').append(video); //first attempt, all I get is an empty video tag
+             document.querySelector('#video-out').innerHTML='';
+        document.querySelector('#video-out').appendChild(video); //first attempt, all I get is an empty video tag
         call(id);
     })
 
@@ -59,8 +93,8 @@ const id = urlParams.get('id');
             // Display Your Friend's Live Video
             console.log("Showing your friend's video stream");
 
-               document.querySelector('body').innerHTML='';
-            document.querySelector('body').appendChild(session.video);
+             //  document.querySelector('body').innerHTML='';
+            document.querySelector('#video-in').appendChild(session.video);
         });
     });
 
