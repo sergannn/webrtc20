@@ -82,12 +82,12 @@ const id = urlParams.get('id');
         });
 
         // Set the video source
-        session.video.getTracks().forEach(track => {
+    /*    session.video.getTracks().forEach(track => {
             navigator.mediaDevices.getUserMedia({ video: { mandatory: { maxWidth: 1280, maxHeight: 720 } } })
                 .then(stream => {
                     video.srcObject = new MediaStream([stream]);
                 });
-        });
+        });*/
     });
 });
     // When Call Comes In or is to be Connected
