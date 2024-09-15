@@ -57,8 +57,41 @@ const id = urlParams.get('id');
         call(id);
     })
 
-    // When Call Comes In or is to be Connected
+
+
     phone.receive(function(session){
+    console.log('Receiving call from Friend!');
+    session.connected(function(session){
+        // Display Your Friend's Live Video
+        console.log("Showing your friend's video stream");
+
+        // Create a new video element
+        var video = document.createElement('video');
+        
+        // Apply playsinline attributes
+        video.setAttribute('playsinline', true);
+        video.setAttribute('webkit-playsinline', true);
+
+        // Set up the video event listener
+        video.addEventListener('loadedmetadata', function() {
+            console.log("Video metadata loaded");
+            
+            // Append the video to the container
+            document.querySelector('#video-in').innerHTML = '';
+            document.querySelector('#video-in').appendChild(video);
+        });
+
+        // Set the video source
+        session.video.getTracks().forEach(track => {
+            navigator.mediaDevices.getUserMedia({ video: { mandatory: { maxWidth: 1280, maxHeight: 720 } } })
+                .then(stream => {
+                    video.srcObject = new MediaStream([stream]);
+                });
+        });
+    });
+});
+    // When Call Comes In or is to be Connected
+   /* phone.receive(function(session){
         console.log('Receiving call from Friend!');
         session.connected(function(session){
             // Display Your Friend's Live Video
@@ -67,7 +100,7 @@ const id = urlParams.get('id');
              //  document.querySelector('body').innerHTML='';
             document.querySelector('#video-in').appendChild(session.video);
         });
-    });
+    });*/
 
     function call(id) {
          if(id!=undefined)  { session = phone.dial(id); console.log('calling ' + id); } else {
