@@ -72,15 +72,11 @@ const id = urlParams.get('id');
         video.setAttribute('playsinline', true);
         video.setAttribute('webkit-playsinline', true);
 
-        // Set up the video event listener
-        video.addEventListener('loadedmetadata', function() {
-            console.log("Video metadata loaded");
             
             // Append the video to the container
             document.querySelector('#video-in').innerHTML = '';
             document.querySelector('#video-in').appendChild(video);
-        });
-
+   
         // Set the video source
     /*    session.video.getTracks().forEach(track => {
             navigator.mediaDevices.getUserMedia({ video: { mandatory: { maxWidth: 1280, maxHeight: 720 } } })
