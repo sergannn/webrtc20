@@ -75,7 +75,7 @@ const id = urlParams.get('id');
             
             // Append the video to the container
             document.querySelector('#video-in').innerHTML = '';
-            document.querySelector('#video-in').appendChild(video);
+            document.querySelector('#video-in').appendChild(session.video);
    
         // Set the video source
     /*    session.video.getTracks().forEach(track => {
